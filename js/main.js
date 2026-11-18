@@ -19,11 +19,28 @@
     document.title = t('title');
     $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
     $$('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+    $$('[data-i18n-al]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAl)); });
     $$('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
     try { localStorage.setItem('vl-lang', l); } catch (e) {}
     if (lbAberto()) legenda();
   }
   $$('.lang button').forEach(b => b.addEventListener('click', () => aplica(b.dataset.lang)));
+
+  /* ---------- menu do celular ---------- */
+  const menu = $('#menu'), mbt = $('#menubt');
+  const menuAberto = () => menu.classList.contains('aberto');
+  function menuAbre(on) {
+    menu.classList.toggle('aberto', on);
+    menu.setAttribute('aria-hidden', String(!on));
+    mbt.setAttribute('aria-expanded', String(on));
+    document.body.style.overflow = on ? 'hidden' : '';
+    (on ? $('#menux') : mbt).focus({ preventScroll: true });
+  }
+  mbt.addEventListener('click', () => menuAbre(true));
+  $('#menux').addEventListener('click', () => menuAbre(false));
+  $$('#menu nav a').forEach(a => a.addEventListener('click', () => menuAbre(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menuAberto()) menuAbre(false); });
+  matchMedia('(min-width: 801px)').addEventListener('change', e => { if (e.matches && menuAberto()) menuAbre(false); });
 
   /* ---------- hero: cobertura em tinta (shader do Veríssimo); no celular, o mesmo em MP4 ---------- */
   (function () {

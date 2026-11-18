@@ -22,6 +22,7 @@
 <body>
 
 <header class="nav" id="topo">
+  <button type="button" class="menu-bt" id="menubt" aria-controls="menu" aria-expanded="false" data-i18n-al="nav.menu" aria-label="Abrir menu"><span></span><span></span></button>
   <nav class="nav-l" aria-label="Secções">
     <a href="#trabalhos" data-i18n="nav.trab">Trabalhos</a>
     <a href="#prova" data-i18n="nav.prova">Prova</a>
@@ -38,6 +39,18 @@
     </div>
   </div>
 </header>
+<div class="menu" id="menu" aria-hidden="true">
+  <button type="button" class="menu-x" id="menux" data-i18n-al="nav.fechar" aria-label="Fechar menu"><span></span><span></span></button>
+  <img class="menu-vl" src="img/vl.webp" alt="" aria-hidden="true" width="49" height="68">
+  <nav aria-label="Menu">
+    <a href="#trabalhos" data-i18n="nav.trab">Trabalhos</a>
+    <a href="#prova" data-i18n="nav.prova">Prova</a>
+    <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+    <a href="#onde" data-i18n="nav.onde">Onde</a>
+    <a href="#marcar" data-i18n="nav.orc">Orçamento</a>
+  </nav>
+  <a class="menu-wa" href="https://wa.me/351965489781" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <main>
 <section class="hero">

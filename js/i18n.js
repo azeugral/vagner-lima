@@ -1,6 +1,6 @@
 window.T = {
 pt: {
-  "nav.trab":"Trabalhos","nav.prova":"Prova","nav.sobre":"Sobre","nav.onde":"Onde","nav.orc":"Orçamento",
+  "nav.trab":"Trabalhos","nav.prova":"Prova","nav.sobre":"Sobre","nav.onde":"Onde","nav.orc":"Orçamento","nav.menu":"Abrir menu","nav.fechar":"Fechar menu",
   "hero.estilo":"Realismo a preto e cinza","hero.orc":"Pedir orçamento","hero.trab":"Ver trabalhos",
   "trab.h":"Trabalhos","trab.p":"Retratos, animais e fechamentos a preto e cinza. Cada sombra tem um propósito.","trab.mais":"Ver mais trabalhos",
   "f.todos":"Todos","f.ret":"Retratos","f.ani":"Animais","f.fec":"Fechamentos","f.cav":"Caveiras e símbolos",
@@ -35,7 +35,7 @@ pt: {
   "title":"Vagner de Lima · Realismo a preto e cinza · Bensheim e Lisboa"
 },
 de: {
-  "nav.trab":"Arbeiten","nav.prova":"Abgeheilt","nav.sobre":"Über mich","nav.onde":"Wo","nav.orc":"Anfrage",
+  "nav.trab":"Arbeiten","nav.prova":"Abgeheilt","nav.sobre":"Über mich","nav.onde":"Wo","nav.orc":"Anfrage","nav.menu":"Menü öffnen","nav.fechar":"Menü schließen",
   "hero.estilo":"Black & Grey Realismus","hero.orc":"Anfrage senden","hero.trab":"Arbeiten ansehen",
   "trab.h":"Arbeiten","trab.p":"Porträts, Tiere und großflächige Projekte in Black & Grey. Jeder Schatten hat einen Sinn.","trab.mais":"Mehr Arbeiten",
   "f.todos":"Alle","f.ret":"Porträts","f.ani":"Tiere","f.fec":"Sleeves & Rücken","f.cav":"Totenköpfe & Symbole",
@@ -70,7 +70,7 @@ de: {
   "title":"Vagner de Lima · Black & Grey Realismus · Bensheim und Lissabon"
 },
 en: {
-  "nav.trab":"Work","nav.prova":"Healed","nav.sobre":"About","nav.onde":"Where","nav.orc":"Booking",
+  "nav.trab":"Work","nav.prova":"Healed","nav.sobre":"About","nav.onde":"Where","nav.orc":"Booking","nav.menu":"Open menu","nav.fechar":"Close menu",
   "hero.estilo":"Black & grey realism","hero.orc":"Request a quote","hero.trab":"See the work",
   "trab.h":"Work","trab.p":"Portraits, animals and full projects in black & grey. Every shadow has a purpose.","trab.mais":"See more work",
   "f.todos":"All","f.ret":"Portraits","f.ani":"Animals","f.fec":"Sleeves & backs","f.cav":"Skulls & symbols",
