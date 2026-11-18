@@ -165,7 +165,7 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ouro)}
 
 /* rodapé */
 .rodape{padding:64px 16px 40px;text-align:center;border-top:1px solid var(--linha);display:flex;flex-direction:column;align-items:center}
-.rodape img{height:64px;width:auto}
+.rodape .carta-logo{width:min(220px,52vw);height:auto;margin-bottom:20px}
 .r-nome{margin:16px 0 4px;font:600 24px/1.2 var(--serif)}
 .r-sub{text-wrap:balance;margin:0;color:var(--cinza);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
 .r-links{display:flex;gap:26px;margin:22px 0 30px}
