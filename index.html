@@ -17,7 +17,6 @@
 <link rel="preload" href="fonts/cinzel.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/hero/h1-1200.webp" as="image">
-<link rel="preload" href="img/tinta1.png" as="image">
 <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -51,10 +50,9 @@
       <img class="flor d" src="img/flor.webp" alt="" aria-hidden="true">
       <div class="moldura">
         <div class="janela" id="janela">
-          <img class="peca" src="img/hero/h1-1200.webp" srcset="img/hero/h1-640.webp 640w, img/hero/h1-1200.webp 1200w" sizes="(max-width:700px) 80vw, 440px" alt="Rosto feminino em realismo preto e cinza no antebraço">
-          <img class="peca" src="img/hero/h2-1200.webp" srcset="img/hero/h2-640.webp 640w, img/hero/h2-1200.webp 1200w" sizes="(max-width:700px) 80vw, 440px" alt="Lobo em realismo preto e cinza no braço">
-          <img class="peca" src="img/hero/h3-1200.webp" srcset="img/hero/h3-640.webp 640w, img/hero/h3-1200.webp 1200w" sizes="(max-width:700px) 80vw, 440px" alt="Retrato de Zeus em realismo preto e cinza no antebraço">
-          <img class="peca" src="img/hero/h4-1200.webp" srcset="img/hero/h4-640.webp 640w, img/hero/h4-1200.webp 1200w" sizes="(max-width:700px) 80vw, 440px" alt="Leão em realismo preto e cinza no ombro">
+          <img class="peca vis" src="img/hero/h1-1200.webp" srcset="img/hero/h1-640.webp 640w, img/hero/h1-1200.webp 1200w" sizes="(max-width:700px) 86vw, 440px" alt="Trabalhos de realismo a preto e cinza do Vagner de Lima: rosto feminino, lobo, Zeus e leão">
+          <canvas class="tela" id="tela" aria-hidden="true"></canvas>
+          <video class="tela-mp4" id="telamp4" muted playsinline loop preload="auto" aria-hidden="true" hidden></video>
         </div>
       </div>
     </div>
@@ -264,6 +262,7 @@
 </div>
 
 <script src="js/i18n.js"></script>
+<script src="js/tinta.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

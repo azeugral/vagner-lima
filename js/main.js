@@ -25,31 +25,35 @@
   }
   $$('.lang button').forEach(b => b.addEventListener('click', () => aplica(b.dataset.lang)));
 
-  /* ---------- hero: cobertura em tinta ---------- */
-  const pecas = $$('#janela .peca');
-  let atual = 0, tk = 0;
-  function mostra(i) {
-    const nova = pecas[i];
-    tk = tk % 3 + 1;
-    nova.classList.remove('t2', 't3', 'entra');
-    void nova.offsetWidth;
-    nova.classList.add('entra');
-    if (tk > 1) nova.classList.add('t' + tk);
-    nova.addEventListener('animationend', function fim() {
-      nova.removeEventListener('animationend', fim);
-      pecas.forEach(p => { if (p !== nova) p.classList.remove('vis', 'entra', 't2', 't3'); });
-      nova.classList.add('vis'); nova.classList.remove('entra', 't2', 't3');
-    });
-    atual = i;
-  }
-  if (pecas.length) {
-    const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduz) pecas[0].classList.add('vis');
-    else {
-      mostra(0);
-      setInterval(() => { if (!document.hidden) mostra((atual + 1) % pecas.length); }, 5000);
+  /* ---------- hero: cobertura em tinta (shader do Veríssimo); no celular, o mesmo em MP4 ---------- */
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cv = $('#tela'), vd = $('#telamp4');
+    if (matchMedia('(max-width: 700px)').matches) {
+      vd.hidden = false; vd.src = 'img/hero/tinta.mp4';
+      vd.addEventListener('playing', () => vd.classList.add('on'), { once: true });
+      vd.play().catch(() => {});
+      return;
     }
-  }
+    if (!window.tinta) return;
+    const srcs = [1, 2, 3, 4].map(n => `img/hero/h${n}-1200.webp`);
+    Promise.all(srcs.map(s => new Promise((ok, no) => { const im = new Image(); im.onload = () => ok(im); im.onerror = no; im.src = s; })))
+      .then(imgs => {
+        const tn = window.tinta(cv, imgs); if (!tn) return;
+        const ini = performance.now() - tn.TR * 1000;   /* abre com a 1ª peça inteira */
+        let pausa = 0, pt = 0;
+        const quadro = now => {
+          if (!document.hidden) tn.desenha((now - ini - pausa) / 1000);
+          requestAnimationFrame(quadro);
+        };
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) pt = performance.now(); else if (pt) pausa += performance.now() - pt;
+        });
+        tn.desenha(tn.TR); cv.classList.add('on');
+        requestAnimationFrame(quadro);
+        window.__tinta = tn;
+      }).catch(() => {});
+  })();
 
   /* ---------- trabalhos ---------- */
   const grade = $('#grade'), mais = $('#mais');
